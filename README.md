@@ -75,12 +75,6 @@ npm start
 
 The server will start at `http://localhost:8080`.
 
-## 📸 Preview
-
-> [!TIP]
-> **Pro Tip:** Add a screenshot of your homepage here by uploading an image to your repo and linking it below!
-> `![Homepage](public/images/screenshot.png)`
-
 ## 🤝 Contributing
 
 Contributions make the open-source community an amazing place to learn and create.
@@ -95,6 +89,5 @@ Contributions make the open-source community an amazing place to learn and creat
 
 This project is licensed under the **MIT License**.
 
-**Developed with ❤️ by [Sandhya**](https://www.google.com/search?q=https://github.com/sandhya0111)
-* Help you write a **Deployment Guide** specifically for Render or Vercel?
-* Create a **Custom Logo** or Banner for the top of this README?
+**Developed with ❤️ by [Sandhya](https://www.google.com/search?q=https://github.com/sandhya0111)
+
