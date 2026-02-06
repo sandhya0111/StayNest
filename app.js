@@ -1,10 +1,6 @@
 if (process.env.NODE_ENV != "production") {
   require("dotenv").config();
 }
-// Add this near your other routes
-app.get("/", (req, res) => {
-  res.redirect("/listings");
-});
 
 const express = require("express");
 const app = express();
@@ -28,9 +24,11 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 
 // ------------------ VIEW ENGINE SETUP ------------------
+
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
 
 // ------------------ MIDDLEWARE ------------------
 app.use(express.urlencoded({ extended: true }));
@@ -97,9 +95,16 @@ async function main() {
 }
 
 // ------------------ ROUTES ------------------
+
+// Add this near your other routes
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+
+
 
 // ------------------ ERROR ROUTE ------------------
 app.all('/{*any}', (req, res, next) => {
