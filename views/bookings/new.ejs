@@ -1,0 +1,36 @@
+<% layout('/layouts/boilerplate')%>
+<div class="container mt-5">
+    <h2>Book Your Stay</h2>
+
+   <form action="/listings/<%= listing.id %>/book" method="POST">
+        <div class="mb-3">
+            <label for="startDate" class="form-label">
+                Check-in Date
+            </label>
+            <input
+                type="date"
+                id="startDate"
+                name="startDate"
+                class="form-control"
+                required
+            >
+        </div>
+
+        <div class="mb-3">
+            <label for="endDate" class="form-label">
+                Check-out Date
+            </label>
+            <input
+                type="date"
+                id="endDate"
+                name="endDate"
+                class="form-control"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Confirm Booking    
+        </button>
+    </form>
+</div>

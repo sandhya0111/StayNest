@@ -152,30 +152,47 @@
 
 
 
+<div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
+    <% for (let el of arr) { %>
+        <div class="col">
+            <div class="card listing-card" style="width:20rem;">
+
+                <a href="/listings/<%= el._id %>" class="listings-link">
+                    <img
+                        src="<%= el.image.url %>"
+                        class="card-img-top"
+                        alt="hotel_image"
+                        style="height:20rem;"
+                    />
+                </a>
+
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= el.title %></b>
+                        <b><%= el.id %></b>
+                    </p>
 
 
-    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
-         <%for( let el of arr){%>
-          <a href="/listings/<%=el._id%>" class="listings-link">
-    <div class="card col listing-card" style="width:20rem;">
-  <img src="<%=el.image.url%>"
-   class="card-img-top" 
-   alt="hotel_image"
-    style="height: 20rem;"
-    />
-    <div class="card-img-overlay"></div>
-  <div class="card-body">
-    <p class="card-text">
-       <b> <%=el.title%><br></b>
-   &#8377; <%= el.price ? el.price.toLocaleString("en-IN") : "N/A" %>/night
-   <i class="tax-info">&nbsp;&nbsp;+18% GST</i>
+                    <p><%= el.description %></p>
 
-   </p>
-  </div>
+                    <p>
+                        &#8377; <%= el.price ? el.price.toLocaleString("en-IN") : "N/A" %>/night
+                        <i class="tax-info">&nbsp;&nbsp;+18% GST</i>
+                    </p>
+
+                    <a href="/listings/<%= el.id %>/book" class="btn btn-primary">
+                        Book Now
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    <% } %>
 </div>
- </a>
-<% } %>
- </div>
+
+
+
+  
 
 
  <script>
